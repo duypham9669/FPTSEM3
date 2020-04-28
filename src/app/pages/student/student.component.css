@@ -1,0 +1,31 @@
+a {
+    padding: 5px;
+    color: blue  
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  .left{
+    justify-content:space-between;
+    float: left;
+  }
+  .full{
+    justify-content:flex-end;
+    background-color: #42A948;
+    width: 100%;
+    float: left;
+  }
+  .left{
+    float: left;
+  }
+  .h100{
+    float: left;
+    width: 100%;
+    min-height: 100px;
+  }
+  .textcenter{
+    text-align: center;
+  }
+  .student{
+    background-image: url("/src/assets/img/background/background4.jpg");
+  }

@@ -1,0 +1,78 @@
+<div class="">
+    <div class="row col-sm-2 h100">
+    </div><!-- /.row -->
+    <div class="col-sm-4 left">
+      <h2 class="textcenter">Create Student</h2>
+      <div class="">
+        <form [formGroup]="studentsaveform" #savestudent (ngSubmit)="saveStudent(saveStudent)">
+          <div class="form-group">
+            <label for="student_id">student id</label>
+            <input type="number" class="form-control" placeholder="student id" formControlName="student_id"
+              data-toggle="tooltip" data-placement="right">
+            <div class="alert alert-danger" *ngIf="(Student_id.touched) && (Student_id.invalid)"
+              style="margin-top: 5px;">
+              <span *ngIf="Student_id.errors.required">Student Id is Required</span>
+              <span *ngIf="Student_id.errors.minlength">
+                MinLength Error
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="student name" formControlName="name"
+              name="name">
+            <div class="alert alert-danger" *ngIf="(Name.touched) && (Name.invalid)" style="margin-top: 5px;">
+              <span *ngIf="Name.errors.required">Name is Required</span>
+              <span *ngIf="Name.errors.minlength">
+                MinLength Error
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" placeholder="student Age" formControlName="age"
+              name="age">
+            <div class="alert alert-danger" *ngIf="(Age.touched) && (Age.invalid)" style="margin-top: 5px;">
+              <span *ngIf="Age.errors.required">Name is Required</span>
+              <span *ngIf="Age.errors.minlength">
+                MinLength Error
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Adress" formControlName="address"
+              name="address">
+            <div class="alert alert-danger" *ngIf="(Address.touched) && (Address.invalid)" style="margin-top: 5px;">
+              <span *ngIf="Address.errors.required">Name is Required</span>
+              <span *ngIf="Address.errors.minlength">
+                MinLength Error
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <p></p>
+            <input type="radio" formControlName="gender" value="male" checked> Male<br>
+            <input type="radio" formControlName="gender" value="female"> Female<br>
+          </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <div [hidden]="!submitted">
+            <h4>Student Added SuccessFully!</h4>
+            <button (click)="addStudentForm()" class='btn btn-primary'>Add More Student</button>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class=" main-header">
+
+    <div *ngIf="student">
+        <h2>Studet {{student.name | uppercase}} Details</h2>
+      <div>
+        <label>Student id: </label> {{student.student_id}}
+      </div>
+      <div>
+        <label>Name: </label> {{student.name}}
+      </div>
+      <div>
+        <label>Age: </label> {{student.age}}
+      </div>
+      <div>
+        <label>Gender: </label> {{student.gender}}
+      </div>
+      <div>
+        <label>Address: </label> {{student.address}}
+      </div>
+
+</div>
