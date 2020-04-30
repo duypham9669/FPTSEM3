@@ -17,7 +17,6 @@ export class CreateStudentComponent implements OnInit {
 
   ngOnInit() {
     this.submitted = false;
-
   }
     // tslint:disable-next-line: member-ordering
     studentsaveform = new FormGroup({

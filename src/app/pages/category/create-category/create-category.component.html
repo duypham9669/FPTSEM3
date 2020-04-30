@@ -1,0 +1,58 @@
+<div class="create-category">
+    <div class="row col-sm-2 h100">
+    </div><!-- /.row -->
+    <div class="col-sm-4 left">
+      <h2 class="textcenter">Create Category</h2>
+      <div class="">
+        <form [formGroup]="categorysaveform" #savestudent (ngSubmit)="saveCategory()">
+          <div class="form-group">
+            <label for="category_id">category id (0 is auto)</label>
+            <input type="number" class="form-control" formControlName="category_id"
+              value="0">
+            <!-- <div class="alert alert-danger" *ngIf="(category_id.touched) && (category_id.invalid)" -->
+              <!-- style="margin-top: 5px;"> -->
+              <!-- <span *ngIf="category_id.errors.required">Category Id is Required</span> -->
+              <!-- <span *ngIf="category_id.errors.minlength"> -->
+                <!-- MinLength Error -->
+              <!-- </span> -->
+            <!-- </div> -->
+          </div>
+
+          <div class="form-group">
+            <label for="category_name">Category Name</label>
+            <input type="text" class="form-control" id="category_name" placeholder="Category name" formControlName="category_name"
+              name="category_name">
+            <div class="alert alert-danger" *ngIf="(category_name.touched) && (category_name.invalid)" style="margin-top: 5px;">
+              <span *ngIf="category_name.errors.required">Category Name is Required</span>
+              <span *ngIf="category_name.errors.minlength">
+                MinLength Error
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="category_description">Description</label>
+            <input type="text" class="form-control" id="category_description" placeholder="Description" formControlName="category_description"
+              name="category_description">
+            <div class="alert alert-danger" *ngIf="(category_description.touched) && (category_description.invalid)" style="margin-top: 5px;">
+              <span *ngIf="category_description.errors.required">Description is Required</span>
+              <span *ngIf="category_description.errors.minlength">
+                MinLength Error
+              </span>
+            </div>
+          </div>        
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <div [hidden]="!submitted">
+            <h4>Category Added SuccessFully!</h4>
+            <button (click)="addCategoryForm()" class='btn btn-primary'>Add More Category</button>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class=" main-header">
+    <h1>Category</h1>
+    <a href="category/add">Add</a>
+    <div class="search">
+      <input type="text" [(ngModel)]="term" placeholder="&#61442;  seach with category name">
+      </div>
+  <div class="panel-body col-sm-11">
+  <table class="table table-striped table-bordered" >
+  <thead>
+    <tr>
+      <th>Category ID</th>
+      <th>Category Name</th>
+      <th>Category Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categorys| filter:term |paginate:{itemsPerPage:5, currentPage: p} " style="width: 300px;">
+      <td>{{category.category_id}}</td>
+      <td><a href="category/{{category.category_id}}"
+          rel="follow, index">{{category.category_name}}</a></td>
+      <td>{{category.category_description}}</td>
+      <td>
+        <!-- <button type="button" class="button btn-danger"
+        (click)="deleteStudentById(student.student_id)">Delete</button>
+      &nbsp; -->
+        <button class='btn btn-info' data-toggle="modal"
+          data-target="#myModal">Update</button>
+        &nbsp;
+        <button (click)="getCategory2(category.category_id)"  class='btn btn-danger' data-toggle="modal"
+          data-target="#myModalDelete">Dlete</button>
+  
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+
+<!-- DELETE -->
+<div class="modal" id="myModalDelete">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title" style="text-align: center">Delete Category</h4>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body" *ngIf="category2">
+      <div>
+        DELETE Category {{category2.category_name}} with id {{category2.category_id}}
+      </div>
+    </div>
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="button btn-danger" (click)="deleteCategoryById(category2.category_id)"
+        data-dismiss="modal">Delete</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+  </div>
+  </div>

@@ -23,6 +23,13 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TestComponent } from './test/test.component';
 import { CreateStudentComponent } from './pages/student/create-student/create-student.component';
 import { DetailStudentComponent } from './pages/student/detail-student/detail-student.component';
+import { CategoryComponent } from './pages/category/category.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { CreateProductComponent } from './pages/products/create-product/create-product.component';
+import { DetailProductComponent } from './pages/products/detail-product/detail-product.component';
+import { CreateCategoryComponent } from './pages/category/create-category/create-category.component';
+import { DetailCategoryComponent } from './pages/category/detail-category/detail-category.component';
+import { ProductForuserComponent } from './pages/product-foruser/product-foruser.component';
 
 
 @NgModule({
@@ -33,6 +40,13 @@ import { DetailStudentComponent } from './pages/student/detail-student/detail-st
     TestComponent,
     CreateStudentComponent,
     DetailStudentComponent,
+    CategoryComponent,
+    ProductsComponent,
+    CreateProductComponent,
+    DetailProductComponent,
+    CreateCategoryComponent,
+    DetailCategoryComponent,
+    ProductForuserComponent,
   ],
   imports: [
     BrowserModule,

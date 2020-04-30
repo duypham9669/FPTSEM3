@@ -1,0 +1,32 @@
+<div class=" main-header">
+    <div *ngIf="category">
+        <h2>Category {{category.category_name | uppercase}} Details</h2>
+      <div>
+        <label>Category id: </label> {{category.category_id}}
+      </div>
+      <div>
+        <label>Category Name: </label> {{category.category_name}}
+      </div>
+      <div>
+        <label>Description: </label> {{category.category_description}}
+      </div>
+</div>
+<p></p>
+<div class="col-lg-12">
+    <!-- list product here -->
+    <div class="detailCategory" *ngFor="let product of products|paginate:{itemsPerPage:5, currentPage: p}">
+        <!-- <td>{{category.category_id}}</td> -->
+        <div class="card" style="width: 15rem;">
+        <img src="assets/img/product/product.png" class="card-img-top" data-src="holder.js/50px50/" alt="Card image cap" />
+        <div class="card-body">
+            <a href="product/{{product.product_id}}"
+          rel="follow, index"><h4 class="card-title">{{product.product_name}}</h4></a>
+        <!-- <h4 class="card-title">{{product.product_name}}</h4> -->
+       <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <!-- <a href="#" class="btn btn-primary">Add to card</a> -->
+    </div>
+     </div>
+    </div>
+    </div>
+
+</div>

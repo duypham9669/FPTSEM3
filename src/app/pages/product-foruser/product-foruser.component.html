@@ -1,0 +1,36 @@
+<script src="assets/js/bootstrap.js"></script>
+<section id="aa-product">
+  <div class="search left">
+    <input type="text" [(ngModel)]="term" placeholder="&#61442;  seach with product name">
+    </div>
+    <!-- ---------drop down menu------------------ -->
+    <div class="dropdown">
+      <a data-toggle="dropdown" href="">Category<span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <!-- ------------------------------------------ -->
+    <p></p>
+    <ul class="aa-product-catg">
+      <!-- start single product item -->
+      <li *ngFor="let product of products| filter:term|paginate:{itemsPerPage:5, currentPage: p}">
+        <figure>
+          <a class="aa-product-img" href="#"><img src="assets/img/product/product-foruser.png" alt="polo shirt img"></a>
+          <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+          <figcaption>
+            <h4 class="aa-product-title"><a href="#">{{product.product_name}}</a></h4>
+            <span class="aa-product-price">Price: {{product.product_price}}$</span>
+          </figcaption>
+        </figure>                         
+
+        <!-- product badge -->
+         <span class="aa-badge aa-sold-out" href="#">Sold Out!</span>
+      </li>                        
+    </ul>
+</section>

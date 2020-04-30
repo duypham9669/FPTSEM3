@@ -1,7 +1,3 @@
-a {
-    padding: 5px;
-    color: blue  
-}
 .ng-valid[required], .ng-valid.required  {
     border-left: 5px solid #42A948; /* green */
   }
@@ -26,6 +22,3 @@ a {
   .textcenter{
     text-align: center;
   }
-  /* .student{
-    background-image: url("assets/img/background/background4.jpg");
-  } */

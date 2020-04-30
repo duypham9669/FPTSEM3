@@ -141,3 +141,26 @@
 </div>
 </div>
 </div>
+<!-- DELETE -->
+<div class="modal" id="myModalDelete">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title" style="text-align: center">Delete Student</h4>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body" *ngIf="student2">
+      <div>
+        DELETE Student {{student2.name}} with id {{student2.student_id}}
+      </div>
+    </div>
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="button btn-danger" (click)="deleteStudentById(student2.student_id)"
+        data-dismiss="modal">Delete</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+  </div>
+  </div>
