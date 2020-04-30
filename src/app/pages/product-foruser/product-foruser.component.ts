@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import {Product} from '../../model/product';
 import {ProductService} from '../../service/product.service';
-import { createPopper } from '@popperjs/core';
-const popcorn = document.querySelector('#popcorn');
-const tooltip = document.querySelector('#tooltip');
+import {CategoryService} from '../../service/category.service';
+import { Category } from 'app/model/category';
+
 @Component({
   selector: 'app-product-foruser',
   templateUrl: './product-foruser.component.html',
@@ -15,12 +15,16 @@ export class ProductForuserComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject();
   
   products: Observable<Product[]>;
+  categorys: Observable<Category[]>;
   product: Product;
   product2: Product;
   submitted = false;
   categorylist: any;
   isupdated = false;
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService,
+    private categoryService: CategoryService
+    ) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -33,6 +37,26 @@ export class ProductForuserComponent implements OnInit {
     this.products = data;
     this.dtTrigger.next();
     });
+    this.getCategory();
+  }
+  changListProduct(id: number) {
+    this.categoryService.getListProduct(id)
+    .subscribe(
+      data => {
+        this.products = data;
+        this.dtTrigger.next();
+      },
+      error => {
+        console.log('ERROR: ' + error);
+        this.products=null;
+        alert("Category not have Product");
+      });
+  }
+  getCategory(){
+    this.categoryService.getCategoryList().subscribe(data =>{
+      this.categorys = data;
+      this.dtTrigger.next();
+      });
   }
 
 }

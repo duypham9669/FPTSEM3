@@ -13,6 +13,7 @@
   }
   .left{
     float: left;
+    margin-right: 50px;
   }
   .h100{
     float: left;
